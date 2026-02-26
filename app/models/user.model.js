@@ -24,6 +24,11 @@ class UserModel {
     return { ...row, id: String(row.id) };
   }
 
+  static async delete(id) {
+    const db = await getDB();
+    await db.run("DELETE FROM users WHERE id = ?;", [id]);
+  }
+
   static async create(payload) {
     const db = await getDB();
     const createdAt = new Date().toISOString();

@@ -29,8 +29,23 @@ async function createUser(payload) {
   return UserModel.create(payload);
 }
 
+async function deleteUser(id) {
+  const user = await UserModel.find(id);
+
+  await UserModel.delete(id);
+
+  if (!user) {
+    const error = new Error("User not found");
+    error.statusCode = 404;
+    throw error;
+  }
+
+  return true;
+}
+
 module.exports = {
   getAllUsers,
   getUserById,
   createUser,
+  deleteUser,
 };
