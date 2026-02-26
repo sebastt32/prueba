@@ -3,3 +3,5 @@ node_modules/
 npm-debug.log*
 data/app.sqlite
 *.sqlite
+data/test.sqlite
+coverage/

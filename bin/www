@@ -4,6 +4,8 @@
  * Module dependencies.
  */
 
+require('dotenv').config();
+
 var app = require('../app');
 var connectDB = require('../app/config/db');
 var debug = require('debug')('prueba:server');

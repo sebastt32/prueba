@@ -32,13 +32,13 @@ async function createUser(payload) {
 async function deleteUser(id) {
   const user = await UserModel.find(id);
 
-  await UserModel.delete(id);
-
   if (!user) {
     const error = new Error("User not found");
     error.statusCode = 404;
     throw error;
   }
+
+  await UserModel.delete(id);
 
   return true;
 }

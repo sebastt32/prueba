@@ -31,8 +31,7 @@ async function createUser(req, res, next) {
 async function deleteUser(req, res, next) {
   try {
     await usersService.deleteUser(req.params.id);
-    return res.status(200).json({ message: "Deleted successfully" });
-    
+    return res.status(204).send();
   } catch (error) {
     return next(error);
   }
