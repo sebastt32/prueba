@@ -1,0 +1,4 @@
+const app = require("../app");
+const listEndpoints = require("express-list-endpoints");
+
+console.table(listEndpoints(app));
